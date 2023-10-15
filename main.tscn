@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://brvjtgdbw7uv7"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_78npk"]
+[ext_resource type="PackedScene" uid="uid://c6rn56jvy2gr1" path="res://BG.tscn" id="2_vnnai"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_78npk")
+
+[node name="play" type="Button" parent="."]
+offset_left = 506.0
+offset_top = 288.0
+offset_right = 695.0
+offset_bottom = 365.0
+text = "Play
+"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 499.0
+offset_top = 424.0
+offset_right = 700.0
+offset_bottom = 499.0
+text = "Quit
+
+"
+
+[node name="BG" parent="." instance=ExtResource("2_vnnai")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 88.0
+offset_right = 890.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 0, 0.694118, 1)
+text = "INSTRUCTIONS:
+-Make the Squirrel reach its home
+-Destroy the Frogs trying to stop or come in its way to earn GOLD.
+-BEWARE: A Direct Hit to the frog  destroys  the player's health.
+-If you reach Home without the HP value reaching zero then , you 	WIN.
+
+GOOD LUCK!
+"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

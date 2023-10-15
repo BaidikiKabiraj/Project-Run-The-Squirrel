@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://3tuahalsc1ct"]
+
+[ext_resource type="PackedScene" uid="uid://c6rn56jvy2gr1" path="res://BG.tscn" id="1_24jay"]
+[ext_resource type="Script" path="res://won.gd" id="1_s0m4t"]
+
+[node name="Won" type="Node2D"]
+script = ExtResource("1_s0m4t")
+
+[node name="BG" parent="." instance=ExtResource("1_24jay")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 259.0
+offset_top = 71.0
+offset_right = 904.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0.835294, 0.431373, 0.211765, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.694118, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0.901961, 0.4, 0.454902, 1)
+theme_override_font_sizes/font_size = 44
+text = "YAYYY!! CONGRATULATIONS!!
+SQUIRREL MAKES IT TO HOME."
+
+[node name="play again" type="Button" parent="."]
+offset_left = 434.0
+offset_top = 313.0
+offset_right = 748.0
+offset_bottom = 432.0
+text = "PLAY AGAIN
+"
+
+[connection signal="pressed" from="play again" to="." method="_on_play_again_pressed"]

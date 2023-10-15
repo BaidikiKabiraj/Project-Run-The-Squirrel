@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://ufjn3ed7c4hx"]
+
+[ext_resource type="Script" path="res://end.gd" id="1_sfoof"]
+[ext_resource type="PackedScene" uid="uid://c6rn56jvy2gr1" path="res://BG.tscn" id="2_clpxp"]
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_sfoof")
+
+[node name="play again" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 215.0
+offset_right = 665.0
+offset_bottom = 293.0
+text = "PLAY AGAIN"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 439.0
+offset_top = 358.0
+offset_right = 676.0
+offset_bottom = 436.0
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 363.0
+offset_top = 71.0
+offset_right = 717.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0, 0.294118, 0.556863, 1)
+theme_override_font_sizes/font_size = 39
+text = "OOPS! GAME OVER!!"
+horizontal_alignment = 1
+
+[node name="BG" parent="." instance=ExtResource("2_clpxp")]
+
+[connection signal="pressed" from="play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
